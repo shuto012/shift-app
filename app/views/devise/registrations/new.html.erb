@@ -2,36 +2,35 @@
   <h1>~新規登録~</h1>
 </div>
 
-<div class="signup-main">
+<div class="signup-form-area">
   <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="signup-form-area">
+    
       <div class="signup-field">
-        <%= f.label "名前", class:"signup-label-name" %><br />
+        <%= f.label "名前", class:"signup-label" %><br />
         <%= f.text_field :name, class:"signup-input", placeholder:"例）〇〇太郎" %>
       </div>
       <div class="signup-field">
-        <%= f.label "従業員番号（半角数字６桁）", class:"signup-label-name" %><br />
+        <%= f.label "従業員番号（半角数字６桁）", class:"signup-label" %><br />
         <%= f.text_field :number, class:"signup-input", placeholder:"000000" %>
+        <div class="caution">※シフト作成者は番号の先頭を０にする</div>
       </div>
-      <div>※シフト作成者は番号の先頭を０にする</div>
       <div class="signup-field">
-        <%= f.label "メールアドレス", class:"signup-label-name" %><br />
+        <%= f.label "メールアドレス", class:"signup-label" %><br />
         <%= f.email_field :email, class:"signup-input", placeholder:"例）〇〇@..." %>
       </div>
       <div class="signup-field">
-        <%= f.label "パスワード", class:"signup-label-name" %><br />
+        <%= f.label "パスワード", class:"signup-label" %><br />
         <%= f.password_field :password, class:"signup-input", placeholder:"６文字以上英数字のみ" %>
       </div>
       <div class="signup-field">
-        <%= f.label "パスワード（確認用）", class:"signup-label-name" %><br />
+        <%= f.label "パスワード（確認用）", class:"signup-label" %><br />
         <%= f.password_field :password_confirmation, class:"signup-input" %>
       </div>
 
-      <div class="signup-area" >
-        <%= f.submit "登録", class:"signup-button" %>
+      <div class="signup-area">
+        <%= f.submit "登　録", class:"signup-button" %>
       </div>
-    </div>
   <% end %>
 </div>
