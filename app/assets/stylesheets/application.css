@@ -24,3 +24,10 @@
   color: white;
   margin: 0 0 0 30px;
 }
+.title-text{
+  font-size: 50px;
+  font-family: 'Osaka';
+  color: white;
+  margin: 0 0 0 30px;
+  text-decoration: none;
+}
