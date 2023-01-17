@@ -1,0 +1,27 @@
+<div class="login-title">
+  <h1><%= link_to'~ログイン~', '#', class:"title-text" %></h1>
+</div>
+
+<div class="login-form-area">
+    <%= form_with model: @user, url: user_session_path, class: 'session-main', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+
+        <div class="login-field">
+          <%= f.label "従業員番号（半角数字６桁）", class:"login-label" %><br />
+          <%= f.text_field :number, class:"login-input", placeholder:"000000" %>
+        </div>
+        <div class="login-field">
+          <%= f.label "メールアドレス", class:"login-label" %><br />
+          <%= f.email_field :email, class:"login-input", placeholder:"例）〇〇@..." %>
+        </div>
+        <div class="login-field">
+          <%= f.label "パスワード", class:"login-label" %><br />
+          <%= f.password_field :password, class:"login-input", placeholder:"６文字以上英数字のみ" %>
+        </div>
+
+        <div class="login-area" >
+          <%= f.submit "ログイン", class:"login-button" %>
+        </div>
+    <% end %>
+</div>
