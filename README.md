@@ -66,7 +66,7 @@ https://docs.google.com/spreadsheets/d/1ARhA8swFtmjjV-4SiFulrncpOiGHK_GC-YMno7H9
 | ------------------ | ---------- | ------------------------------ |
 | start_time         | datetime   | null: false                    |
 | finish_time        | datetime   | null: false                    |
-| comment            | string     |                                |
+| comment            | text       |                                |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
