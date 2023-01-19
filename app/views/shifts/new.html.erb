@@ -1,6 +1,3 @@
-<%= month_calendar shifts: @shifts do |date, shifts| %>
-  <%= date.day %>
-<% end %>
 
 <%= form_with(model: @shift, local: true) do |f| %>
 
@@ -20,5 +17,10 @@
   <div class="shift-submit">
     <%= f.submit "決　定", class:"shift-button" %>
   </div>
+  <%= link_to "戻る", '#', class:"return-button" %>
+<% end %>
 
+
+<%= month_calendar shifts: @shifts do |date, shifts| %>
+  <%= date.day %>
 <% end %>
