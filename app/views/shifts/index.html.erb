@@ -10,3 +10,19 @@
     <% end %>
   </ul>
 </div>
+<div class="index-main">
+  <div class="today-shift">
+      <%# if　今日の日付にシフトあればそれを表示%>
+      <%# end %>
+  </div>
+  
+  <div class="button-area">
+    <ul class="lists-button">
+      <li><%= link_to 'シフト提出', '#', class: "submit-button" %></li>
+      <li><%= link_to 'シフト確認', '#', class: "show-button" %></li>
+      <%# シフト作成者だった時のみ表示 %>
+      <li><%= link_to 'シフト作成', '#', class: "edit-button" %></li>
+      <%# ここまで %>
+    </ul>
+  </div>
+</div>
