@@ -1,24 +1,25 @@
 <div class="index-title">
-  <h1>~シフト管理~</h1>
+    <h1>~シフト管理~</h1>
   <ul class='lists-right'>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.number, "#", class: "user-number" %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <li><%= link_to current_user.number, "#", class: "number-button" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-button" %></li>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "signup-button" %></li>
     <% end %>
   </ul>
 </div>
+
 <div class="index-main">
   <div class="today-shift">
       <%# if　今日の日付にシフトあればそれを表示%>
       <%# end %>
   </div>
-  
+
   <div class="button-area">
     <ul class="lists-button">
-      <li><%= link_to 'シフト提出', '#', class: "submit-button" %></li>
+      <li><%= link_to 'シフト提出', new_shift_path, class: "submit-button" %></li>
       <li><%= link_to 'シフト確認', '#', class: "show-button" %></li>
       <%# シフト作成者だった時のみ表示 %>
       <li><%= link_to 'シフト作成', '#', class: "edit-button" %></li>

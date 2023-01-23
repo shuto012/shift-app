@@ -1,0 +1,31 @@
+.index-title{
+  background-color: gray;
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lists-right{
+  display: flex;
+  background-color: white;
+  justify-content: right;
+  margin: 0 30px 0 0;
+  width: 300px;
+  border: 10px solid gray;
+  justify-content: space-around;
+}
+
+.logout-button{
+  text-decoration: none;
+}
+.number-button{
+  text-decoration: none;
+}
+.login-button{
+  text-decoration: none;
+}
+.signup-button{
+  text-decoration: none;
+}
