@@ -4,11 +4,11 @@
   </div>
   <ul class='lists-right'>
     <% if user_signed_in? %>
-      <li class="user-area"><%= link_to current_user.number, "#", class: "number-button" %></li>
-      <li class="user-area"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-button" %></li>
+      <li class="user-area"><%= link_to current_user.number, "#", class: "number-shift" %></li>
+      <li class="user-area"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-shift" %></li>
     <% else %>
-      <li class="user-area"><%= link_to 'ログイン', new_user_session_path, class: "loginbutton" %></li>
-      <li class="user-area"><%= link_to '新規登録', new_user_registration_path, class: "signupbutton" %></li>
+      <li class="user-area"><%= link_to 'ログイン', new_user_session_path, class: "login-shift" %></li>
+      <li class="user-area"><%= link_to '新規登録', new_user_registration_path, class: "signup-shift" %></li>
     <% end %>
   </ul>
 </div>

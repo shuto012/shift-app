@@ -19,25 +19,25 @@
   border: 3px solid gray;
 }
 
-.logout-button{
+.logout-shift{
   text-decoration: none;
   color: black;
   font-size: 35px;
   text-align: center;
 }
-.number-button{
+.number-shift{
   text-decoration: none;
   color: black;
   font-size: 35px;
   text-align: center;
 }
-.loginbutton{
+.login-shift{
   text-decoration: none;
   color: black;
   font-size: 35px;
   text-align: center;
 }
-.signupbutton{
+.signup-shift{
   text-decoration: none;
   color: black;
   font-size: 35px;
