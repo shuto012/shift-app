@@ -1,0 +1,33 @@
+<div class="index-header">
+  <div class="title">
+    <h1>~シフト管理~</h1>
+  </div>
+  <ul class='lists-right'>
+    <% if user_signed_in? %>
+      <li class="user-area"><%= link_to current_user.number, "#", class: "number-shift" %></li>
+      <li class="user-area"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-shift" %></li>
+    <% else %>
+      <li class="user-area"><%= link_to 'ログイン', new_user_session_path, class: "login-shift" %></li>
+      <li class="user-area"><%= link_to '新規登録', new_user_registration_path, class: "signup-shift" %></li>
+    <% end %>
+  </ul>
+</div>
+<div class="index-main">
+  <div class="index-left">
+    <div class="button-area">
+      <ul class="lists-button">
+        <li class="shift-area"><%= link_to 'シフト提出', new_shift_path, class: "shift-submit" %></li>
+        <li class="shift-area"><%= link_to 'シフト確認', '#', class: "shift-show" %></li>
+        <%# シフト作成者だった時のみ表示 %>
+        <li class="shift-area"><%= link_to 'シフト作成', '#', class: "shift-edit" %></li>
+        <%# ここまで %>
+      </ul>
+    </div>
+  </div>
+  <div class="index-right">
+    <div class="today-shift">
+      <%# if　今日の日付にシフトあればそれを表示%>
+      <%# end %>
+    </div>
+  </div>
+</div>
