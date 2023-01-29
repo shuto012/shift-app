@@ -1,4 +1,4 @@
-.index-title{
+.index-header{
   background-color: gray;
   width: 100vw;
   height: 10vh;
@@ -42,4 +42,55 @@
   color: black;
   font-size: 35px;
   text-align: center;
+}
+/*** メイン ***/
+.index-main{
+  display: flex;
+}
+.index-left{
+  background-color: bisque;
+  width: 500px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shift-area{
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border: 5px solid white;
+  margin: 40px;
+}
+  /*** ボタン部分 ***/
+.button-area{
+
+}
+
+.lists-button{
+
+}
+
+.shift-submit{
+  text-decoration-line: none;
+  font-size: 30px;
+  color: black;
+}
+
+.shift-show{
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+}
+
+.shift-edit{
+  text-decoration: none;
+  font-size: 30px;
+  color: black;
+}
+
+.index-right{
+  display: flex;
+  justify-content: center;
 }
