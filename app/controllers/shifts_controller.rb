@@ -13,6 +13,9 @@ class ShiftsController < ApplicationController
     redirect_to new_shift_path
   end
 
+  def edit
+  end
+
   private
   
   def shift_params
