@@ -122,3 +122,13 @@
   background-color: white;
   border: 5px solid bisque;
 }
+
+/*** 未ログイン ***/
+.not-signin{
+  display: flex;
+  justify-content: space-around;
+}
+
+.notlogin{
+  font-size: 100px;
+}

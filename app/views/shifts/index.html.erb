@@ -13,58 +13,73 @@
   </ul>
 </div>
 
-<div class="index-main">
 
-  <%# 左側 %>
-  <div class="index-left">
-    <div class="today-shift">
-      予定シフト
-      <div class="shift-week">
-        
+<div class="index-main">
+  <% if user_signed_in? %>
+    <%# 左側 %>
+    <div class="index-left">
+      <div class="today-shift">
+        予定シフト
+        <div class="shift-week">
+        </div>
+      </div>
+      <div class="button-area">
+        <ul class="lists-button">
+          <li class="index-button"><%= link_to 'シフト確認', '#', class: "shift-show" %></li>
+          <%# シフト作成者だった時のみ表示 %>
+          <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-edit" %></li>
+          <%# ここまで %>
+          <li class="index-button"><%= link_to 'ユーザー情報', '#', class: "user-edit" %></li>
+        </ul>
       </div>
     </div>
-    <div class="button-area">
-      <ul class="lists-button">
-        <li class="index-button"><%= link_to 'シフト確認', '#', class: "shift-show" %></li>
-        <%# シフト作成者だった時のみ表示 %>
-        <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-edit" %></li>
-        <%# ここまで %>
-        <li class="index-button"><%= link_to 'ユーザー情報', '#', class: "user-edit" %></li>
-      </ul>
-    </div>
-  </div>
-  <%# 左側 %>
+    <%# 左側 %>
 
-  <%# 右側 %>
-  <div class="index-right">
-    <div class="shift-form">
-      <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
+    <%# 右側 %>
+    <div class="index-right">
+      <div class="shift-form">
+        <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
 
-        <div class="shift-time">
-          <div class="start-time">
-            <%= f.label "出勤時間", class:"shift-label" %><br />
-            <%= f.datetime_select :start_time, class:"shift-input" %>
+          <div class="shift-time">
+            <div class="start-time">
+              <%= f.label "出勤時間", class:"shift-label" %><br />
+              <%= f.datetime_select :start_time, class:"shift-input" %>
+            </div>
+
+            <div class="finish-time">
+              <%= f.label "退勤時間", class:"shift-label" %><br />
+              <%= f.datetime_select :finish_time, class:"shift-input" %>
+            </div>
           </div>
-
-          <div class="finish-time">
-            <%= f.label "退勤時間", class:"shift-label" %><br />
-            <%= f.datetime_select :finish_time, class:"shift-input" %>
+          <div class="comment">
+            <%= f.label "コメント", class:"shift-label" %><br />
+            <%= f.text_field :comment, class:"comment-input"%>
           </div>
-        </div>
-        <div class="comment">
-          <%= f.label "コメント", class:"shift-label" %><br />
-          <%= f.text_field :comment, class:"comment-input"%>
-        </div>
-        <div class="shift-submit">
-          <%= f.submit "決　定", class:"shift-button" %>
-        </div>
-      <% end %>
+          <div class="shift-submit">
+            <%= f.submit "決　定", class:"shift-button" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="calender-area">
+        <%= month_calendar shifts: @shift do |date, shift| %>
+          <%= date.day %>
+        <% end %>
+      </div>
     </div>
-    <div class="calender-area">
-      <%= month_calendar shifts: @shift do |date, shift| %>
-        <%= date.day %>
-      <% end %>
+    <%# 右側 %>
+  <% else %>
+    <div class="not-signin">
+      <div class="index-left">
+        <div class="notlogin">ログイン・新規登録をしてください</div>
+      </div>
+      <div class="index-right">
+        <div class="calender-area">
+          <%= month_calendar shifts: @shift do |date, shift| %>
+            <%= date.day %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-  <%# 右側 %>
+
+  <% end %>
 </div>
