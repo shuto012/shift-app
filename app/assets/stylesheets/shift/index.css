@@ -56,6 +56,7 @@
   width: 40vw;
   height: 100vh;
   text-align: center;
+  border: 10px solid white;
 }
 
 .today-shift{
@@ -71,21 +72,53 @@
 }
 
 .button-area{
-  background-color: brown;
-
+  height: 50vh;
 }
 
 .lists-button{
+  height: 50vh;
 }
 
+.index-button{
+  margin: 20px;
+}
+
+.shift-show{
+  color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
+}
+
+.shift-edit{
+  color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
+}
+
+.user-edit{
+  color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
+}
 /*** メイン右側 ***/
 .index-right{
+  background-color: bisque;
   width: 60vw;
   height: 100vh;
-  background-color: green;
+  border: 10px solid white;
 }
 
 .shift-form{
-  background-color: aquamarine;
   width: 100%;
+}
+
+.calender-area{
+  background-color: white;
+  border: 5px solid bisque;
 }
