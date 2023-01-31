@@ -1,3 +1,4 @@
+/*** トップ ***/
 .index-header{
   background-color: gray;
   width: 100vw;
@@ -46,51 +47,88 @@
 /*** メイン ***/
 .index-main{
   display: flex;
+  height: 100vh;
+  width: 100vw;
 }
+/***　メイン左側 ***/
 .index-left{
   background-color: bisque;
-  width: 500px;
+  width: 40vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.shift-area{
-  width: 200px;
-  height: 50px;
   text-align: center;
-  border: 5px solid white;
-  margin: 40px;
+  border: 10px solid white;
 }
-  /*** ボタン部分 ***/
-.button-area{
 
+.today-shift{
+  height: 50vh;
+  width: 100%;
+  font-size: 40px;
+}
+.shift-week{
+  background-color: hotpink;
+  border: 5px solid bisque;
+  height: 40vh;
+  background-color: white;
+}
+
+.button-area{
+  height: 50vh;
 }
 
 .lists-button{
-
+  height: 50vh;
 }
 
-.shift-submit{
-  text-decoration-line: none;
-  font-size: 30px;
-  color: black;
+.index-button{
+  margin: 20px;
 }
 
 .shift-show{
-  text-decoration: none;
-  font-size: 30px;
   color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
 }
 
 .shift-edit{
-  text-decoration: none;
-  font-size: 30px;
   color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
 }
 
+.user-edit{
+  color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
+}
+/*** メイン右側 ***/
 .index-right{
+  background-color: bisque;
+  width: 60vw;
+  height: 100vh;
+  border: 10px solid white;
+}
+
+.shift-form{
+  width: 100%;
+}
+
+.calender-area{
+  background-color: white;
+  border: 5px solid bisque;
+}
+
+/*** 未ログイン ***/
+.not-signin{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.notlogin{
+  font-size: 100px;
 }
