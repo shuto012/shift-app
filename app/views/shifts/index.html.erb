@@ -46,12 +46,14 @@
           <div class="shift-time">
             <div class="start-time">
               <%= f.label "出勤時間", class:"shift-label" %><br />
-              <%= f.datetime_select :start_time, class:"shift-input" %>
+              <%= f.date_select :date, class:"shift-input" %>
+              <%= f.time_select :start_time, class:"shift-input" %>
             </div>
 
             <div class="finish-time">
               <%= f.label "退勤時間", class:"shift-label" %><br />
-              <%= f.datetime_select :finish_time, class:"shift-input" %>
+              <%= f.date_select :date, class:"shift-input" %>
+              <%= f.time_select :finish_time, class:"shift-input" %>
             </div>
           </div>
           <div class="comment">
