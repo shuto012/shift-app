@@ -21,5 +21,4 @@ class ShiftsController < ApplicationController
   def shift_params
     params.require(:shift).permit(:date, :start_time, :finish_time, :comment).merge(user_id: current_user.id)
   end
-  en
 end
