@@ -1,0 +1,60 @@
+<div class="new-header">
+  <div class="title">
+    <h1>~シフト提出~</h1>
+  </div>
+  <ul class='lists-right'>
+      <li class="user-area"><%= link_to current_user.number, "#", class: "number-shift" %></li>
+      <li class="user-area"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout-shift" %></li>
+  </ul>
+</div>
+<div class="new-main">
+  <div class="shift-form">
+    <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
+
+      <div class="shift-times">
+        <div class="start-time">
+          <%= f.label "日付", class:"shift-label" %>
+          <%= f.date_select :date, class:"shift-input" %><br />
+          <%= f.label "出勤時間", class:"shift-label" %>
+          <%= f.time_select :start_time, class:"shift-input" %>
+        </div>
+
+        <div class="finish-time">
+          <%= f.label "退勤時間", class:"shift-label" %>
+          <%= f.time_select :finish_time, class:"shift-input" %>
+        </div>
+      </div>
+      <div class="comment">
+        <%= f.label "コメント", class:"shift-label" %><br />
+        <%= f.text_field :comment, class:"comment-input"%>
+      </div>
+      <div class="shift-submit">
+        <%= f.submit "決　定", class:"shift-button" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="submited-area">
+    <div class="submited-title">
+      <h1>提出シフト一覧</h1>
+    </div>
+    <% @days.each do |day| %>
+      <% @shifts.each do |shift| %>
+        <% if day == shift.date.day %>
+          <div class="a-shift">
+            <div class="shift-date">
+              <%= shift.date.year %>年<%= shift.date.month %>月<%= shift.date.day %>日<br />
+            </div>
+            <div class="shift-time">
+              <%= shift.start_time.strftime( "%H:%M" ) %>-<%= shift.finish_time.strftime( "%H:%M" ) %><br />
+            </div>
+          </div>
+          <% if shift.comment != nil %>
+            <%= shift.comment %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div
+>

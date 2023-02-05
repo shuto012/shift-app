@@ -59,17 +59,6 @@
   border: 10px solid white;
 }
 
-.today-shift{
-  height: 50vh;
-  width: 100%;
-  font-size: 40px;
-}
-.shift-week{
-  background-color: hotpink;
-  border: 5px solid bisque;
-  height: 40vh;
-  background-color: white;
-}
 
 .button-area{
   height: 50vh;
@@ -79,8 +68,17 @@
   height: 50vh;
 }
 
+/*** 左側　ボタン欄 ***/
 .index-button{
   margin: 20px;
+}
+
+.shift-new{
+  color: black;
+  background-color: lightgoldenrodyellow;
+  text-decoration: none;
+  font-size: 50px;
+  border: 5px solid white;
 }
 
 .shift-show{
@@ -113,16 +111,33 @@
   height: 100vh;
   border: 10px solid white;
 }
-
-.shift-form{
-  width: 100%;
+/*** 出勤予定 ***/
+.check-title{
+  color: black;
 }
 
-.calender-area{
+.shift-check{
+  margin: 10px;
+}
+.a-shift{
+  border: 3px solid white;
+  width: 256px;
+  padding: 2px;
+}
+
+.shift-date{
+  border: 3px solid bisque;
+  font-size: 30px;
+  width: 250px;
   background-color: white;
-  border: 5px solid bisque;
 }
 
+.shift-time{
+  border: 3px solid bisque;
+  font-size: 30px;
+  width: 250px;
+  background-color: white;
+}
 /*** 未ログイン ***/
 .not-signin{
   display: flex;
