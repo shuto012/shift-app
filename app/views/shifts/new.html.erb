@@ -9,6 +9,9 @@
 </div>
 <div class="new-main">
   <div class="shift-form">
+    <div class="form-title">
+      <h1>提出フォーム</h1>
+    </div>
     <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
 
       <div class="shift-times">
@@ -28,6 +31,7 @@
         <%= f.label "コメント", class:"shift-label" %><br />
         <%= f.text_field :comment, class:"comment-input"%>
       </div>
+
       <div class="shift-submit">
         <%= f.submit "決　定", class:"shift-button" %>
       </div>
