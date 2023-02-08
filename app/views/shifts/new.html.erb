@@ -65,6 +65,9 @@
                     <%= shift.comment %>
                   <% end %>
                 </div>
+                <div class="submitted-edit">
+                  <%= link_to "編集" ,edit_shift_path(shift.id), class:"edit-button" %>
+                </div>
               </div>
             </div>
           <% end %>
