@@ -138,6 +138,9 @@
   width: 250px;
   background-color: white;
 }
+.shift-comment{
+  
+}
 /*** 未ログイン ***/
 .not-signin{
   display: flex;

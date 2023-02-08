@@ -28,3 +28,35 @@
   border: 3px solid white;
   text-align: center;
 }
+
+.new-right{
+  background-color: bisque;
+  width: 100vw;
+  border: 5px solid white;
+  overflow: scroll;
+}
+
+.submitted-title{
+  border: 3px solid white;
+  text-align: center;
+}
+
+.submitted-area{
+
+}
+
+.submitted-shift{
+  display: flex;
+  width: 100vw;
+  border: 3px solid white;
+  padding: 2px;
+}
+
+.comment{
+  display: flex;
+}
+.comment-zone{
+  background-color: white;
+  width: 400px;
+  font-size: 20px;
+}

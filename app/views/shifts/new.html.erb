@@ -38,27 +38,36 @@
     <% end %>
   </div>
 
-  <div class="submited-area">
-    <div class="submited-title">
+  <div class="new-right">
+    <div class="submitted-title">
       <h1>提出シフト一覧</h1>
     </div>
-    <% @days.each do |day| %>
-      <% @shifts.each do |shift| %>
-        <% if day == shift.date.day %>
-          <div class="a-shift">
-            <div class="shift-date">
-              <%= shift.date.year %>年<%= shift.date.month %>月<%= shift.date.day %>日<br />
+    <div class="submitted-area">
+      <% @days.each do |day| %>
+        <% @shifts.each do |shift| %>
+          <% if day == shift.date.day %>
+            <div class="submitted-shift">
+              <div class="shift-date">
+                <%= shift.date.year %>年<%= shift.date.month %>月<%= shift.date.day %>日<br />
+              </div>
+              <div class="shift-time">
+                <%= shift.start_time.strftime( "%H:%M" ) %>-<%= shift.finish_time.strftime( "%H:%M" ) %><br />
+              </div>
+              <div class="comment">
+                <div class="comment-title">
+                  コメント
+                </div>
+                <div class="comment-zone">
+                  <% if shift.comment != nil %>
+                    <%= shift.comment %>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <div class="shift-time">
-              <%= shift.start_time.strftime( "%H:%M" ) %>-<%= shift.finish_time.strftime( "%H:%M" ) %><br />
-            </div>
-          </div>
-          <% if shift.comment != nil %>
-            <%= shift.comment %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
+
   </div>
 </div
 >

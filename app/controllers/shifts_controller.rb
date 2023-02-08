@@ -14,7 +14,7 @@ class ShiftsController < ApplicationController
 
   def create
     @shift = Shift.create(shift_params)
-    redirect_to root_path
+    redirect_to new_shift_path
   end
 
   def show
