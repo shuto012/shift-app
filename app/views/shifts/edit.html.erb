@@ -1,42 +1,35 @@
-<%#= if シフト作成者なら %>
-  <%# 全員のシフトを編集できる %>
-  <%# 自分のだけも編集できる %>
-<%# end %>
-
-<%#= if シフト作成者じゃないなら %>
-  <%# 自分のシフトを編集できる%>
-<%# end %>
-
-<div class="shift-main">
-  <div class="form-area">
+<div class="edit-header">
+  <h1>~シフト修正~</h1>
+</div>
+<div class="shift-form">
+    <div class="form-title">
+      <h1>提出フォーム</h1>
+    </div>
     <%= form_with model: @shift, url: shifts_path, class: 'shift-main', local: true do |f| %>
 
-      <div class="start-time">
-        <%= f.label "出勤時間", class:"shift-label" %><br />
-        <%= f.datetime_select :start_time, class:"shift-input" %>
-      </div>
+      <div class="shift-times">
+        <div class="start-time">
+          <%= f.label "日付", class:"shift-label" %>
+          <%= f.date_select :date, class:"shift-input" %><br />
+          <%= f.label "出勤時間", class:"shift-label" %>
+          <%= f.time_select :start_time, class:"shift-input" %>
+        </div>
 
-      <div class="finish-time">
-        <%= f.label "退勤時間", class:"shift-label" %><br />
-        <%= f.datetime_select :finish_time, class:"shift-input" %>
+        <div class="finish-time">
+          <%= f.label "退勤時間", class:"shift-label" %>
+          <%= f.time_select :finish_time, class:"shift-input" %>
+        </div>
       </div>
       <div class="comment">
         <%= f.label "コメント", class:"shift-label" %><br />
         <%= f.text_field :comment, class:"comment-input"%>
+      </div>
 
       <div class="shift-submit">
-        <%= f.submit "変　更", class:"shift-button" %>
+        <%= f.submit "決　定", class:"shift-button" %>
       </div>
     <% end %>
+    <div class="return">
+      <%= link_to "もどる", root_path, class:"return-buttun" %>
+    </div>
   </div>
-
-  <div class="shift-return">
-    <%= link_to "戻る", shifts_path, class:"return-button" %>
-  </div>
-
-  <div class="calender-area">
-    <%= month_calendar shifts: @shifts do |date, shifts| %>
-      <%= date.day %>
-    <% end %>
-  </div>
-</div>
