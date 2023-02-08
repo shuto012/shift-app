@@ -21,6 +21,11 @@ class ShiftsController < ApplicationController
     @shift = Shift.find(params[:id])
   end
 
+  def update
+    shift = Shift.find(params[:id])
+    shift.update(shift_params)
+  end
+
   private
   
   def shift_params
