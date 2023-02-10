@@ -68,6 +68,9 @@
                 <div class="submitted-edit">
                   <%= link_to "編集" ,edit_shift_path(shift.id), class:"edit-button" %>
                 </div>
+                <div class="submitted-destroy">
+                  <%= link_to "削除"% ,shift_path(shift.id), method: :delete, class:"destroy-button" %>
+                </div>
               </div>
             </div>
           <% end %>
