@@ -17,10 +17,14 @@ class ShiftsController < ApplicationController
     redirect_to new_shift_path
   end
 
-  def show
-  end
-  
   def edit
+    @shift = Shift.find(params[:id])
+  end
+
+  def update
+    shift = Shift.find(params[:id])
+    shift.update(shift_params)
+    redirect_to new_shift_path
   end
 
   private
@@ -41,5 +45,4 @@ class ShiftsController < ApplicationController
       @days = @days.push(i + 1)
     end
   end
-
 end
