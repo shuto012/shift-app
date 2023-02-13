@@ -4,4 +4,8 @@ class Editor < ActiveHash::Base
     {id: 2, name: 'はい'},
     {id: 3, name: 'いいえ'}
   ]
+
+  include ActiveHash::Associations
+  has_many :users
+  
 end
