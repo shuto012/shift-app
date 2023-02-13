@@ -59,14 +59,29 @@ https://docs.google.com/spreadsheets/d/1ARhA8swFtmjjV-4SiFulrncpOiGHK_GC-YMno7H9
 
 ### Association
 - has_many :shifts
+- has_many :works
 
 ## shifts テーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| start_time         | datetime   | null: false                    |
-| finish_time        | datetime   | null: false                    |
+| date               | date       | null: false                    |
+| start_time         | time       | null: false                    |
+| finish_time        | time       | null: false                    |
 | comment            | text       |                                |
+| user               | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+
+
+## works テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| date               | date       | null: false                    |
+| start_time         | time       | null: false                    |
+| finish_time        | time       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
