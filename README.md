@@ -56,6 +56,7 @@ https://docs.google.com/spreadsheets/d/1ARhA8swFtmjjV-4SiFulrncpOiGHK_GC-YMno7H9
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 | number             | integer | null: false               |
+| editor_id          | integer | null: false               |
 
 ### Association
 - has_many :shifts
