@@ -18,14 +18,16 @@
   <% if user_signed_in? %>
     <%# 左側 %>
     <div class="index-left">
-      
       <div class="button-area">
         <ul class="lists-button">
           <li class="index-button"><%= link_to 'シフト提出', new_shift_path, class: "shift-new" %></li>
           <li class="index-button"><%= link_to '提出シフト確認', '#', class: "shift-show" %></li>
           <li class="index-button"><%= link_to 'ユーザー情報', '#', class: "user-edit" %></li>
           <% if current_user.editor_id == 2 %>
-            <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-editor"%></li>
+            <div class="editor-area">
+              シフト管理者専用
+              <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-editor"%></li>
+            </div>
           <% end %>
         </ul>
       </div>
