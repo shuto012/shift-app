@@ -24,6 +24,9 @@
           <li class="index-button"><%= link_to 'シフト提出', new_shift_path, class: "shift-new" %></li>
           <li class="index-button"><%= link_to '提出シフト確認', '#', class: "shift-show" %></li>
           <li class="index-button"><%= link_to 'ユーザー情報', '#', class: "user-edit" %></li>
+          <% if current_user.editor_id == 2 %>
+            <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-editor"%></li>
+          <% end %>
         </ul>
       </div>
     </div>
