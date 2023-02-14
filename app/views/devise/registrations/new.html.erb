@@ -28,7 +28,10 @@
         <%= f.label "パスワード（確認用）", class:"signup-label" %><br />
         <%= f.password_field :password_confirmation, class:"signup-input" %>
       </div>
-
+      <div class="signup-field">
+        <%= f.label "シフト管理者ですか？", class:"signup-label" %><br />
+        <%= f.collection_select(:editor_id, Editor.all, :id, :name, {}, {class:"editor-select"}) %>
+      </div>
       <div class="signup-area">
         <%= f.submit "登　録", class:"signup-button" %>
       </div>
