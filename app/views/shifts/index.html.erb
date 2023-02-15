@@ -26,7 +26,7 @@
           <% if current_user.editor_id == 2 %>
             <div class="editor-area">
               シフト管理者専用
-              <li class="index-button"><%= link_to 'シフト作成', '#', class: "shift-editor"%></li>
+              <li class="index-button"><%= link_to 'シフト作成', new_work_path, class: "shift-editor"%></li>
             </div>
           <% end %>
         </ul>
